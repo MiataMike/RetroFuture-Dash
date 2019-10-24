@@ -10522,6 +10522,7 @@ Source: http://cache.national.com/ds/LM/LM340.pdf</description>
 <part name="GND3" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="U$4" library="FormE" deviceset="LUMINI3" device=""/>
 <part name="JP3" library="pinhead" library_urn="urn:adsk.eagle:library:325" deviceset="PINHD-1X1" device="" package3d_urn="urn:adsk.eagle:package:22485/2"/>
+<part name="JP4" library="pinhead" library_urn="urn:adsk.eagle:library:325" deviceset="PINHD-1X1" device="" package3d_urn="urn:adsk.eagle:package:22485/2"/>
 </parts>
 <sheets>
 <sheet>
@@ -10738,6 +10739,10 @@ see datasheet page 14</text>
 <attribute name="NAME" x="-3.81" y="338.455" size="1.778" layer="95" rot="MR0"/>
 <attribute name="VALUE" x="-3.81" y="330.2" size="1.778" layer="96" rot="MR0"/>
 </instance>
+<instance part="JP4" gate="G$1" x="-10.16" y="327.66" smashed="yes" rot="MR0">
+<attribute name="NAME" x="-3.81" y="330.835" size="1.778" layer="95" rot="MR0"/>
+<attribute name="VALUE" x="-3.81" y="322.58" size="1.778" layer="96" rot="MR0"/>
+</instance>
 </instances>
 <busses>
 </busses>
@@ -10831,6 +10836,9 @@ see datasheet page 14</text>
 <pinref part="C8" gate="G$1" pin="2"/>
 <wire x1="25.4" y1="327.66" x2="38.1" y2="327.66" width="0.1524" layer="91"/>
 <junction x="25.4" y="327.66"/>
+<pinref part="JP4" gate="G$1" pin="1"/>
+<wire x1="-7.62" y1="327.66" x2="10.16" y2="327.66" width="0.1524" layer="91"/>
+<junction x="10.16" y="327.66"/>
 </segment>
 <segment>
 <pinref part="R6" gate="G$1" pin="1"/>
@@ -11332,6 +11340,22 @@ see datasheet page 14</text>
 </nets>
 </sheet>
 </sheets>
+<errors>
+<approved hash="104,1,30.48,193.04,IC1,VIN,+12V,,,"/>
+<approved hash="104,1,233.68,101.6,U1,VBB,+24V,,,"/>
+<approved hash="104,1,233.68,99.06,U1,VCC,+3V3,,,"/>
+<approved hash="104,1,7.62,238.76,U2,IN,+15V,,,"/>
+<approved hash="104,1,5.08,289.56,U3,IN,+5V,,,"/>
+<approved hash="104,1,45.72,66.04,U$3,AGND,GND,,,"/>
+<approved hash="104,1,45.72,68.58,U$3,3.3V,+3V3,,,"/>
+<approved hash="104,1,45.72,71.12,U$3,VIN,+5V,,,"/>
+<approved hash="106,1,276.86,91.44,BDOT,,,,,"/>
+<approved hash="106,1,322.58,86.36,G3,,,,,"/>
+<approved hash="106,1,233.68,73.66,NC,,,,,"/>
+<approved hash="106,1,276.86,93.98,TDOT,,,,,"/>
+<approved hash="113,1,22.3478,119.617,JP1,,,,,"/>
+<approved hash="113,1,264.16,288.267,D3,,,,,"/>
+</errors>
 </schematic>
 </drawing>
 <compatibility>
