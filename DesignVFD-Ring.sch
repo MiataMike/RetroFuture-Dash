@@ -92,6 +92,8 @@
 <layer number="111" name="LPC17xx" color="7" fill="1" visible="no" active="yes"/>
 <layer number="112" name="tSilk" color="7" fill="1" visible="no" active="yes"/>
 <layer number="113" name="ReferenceLS" color="7" fill="1" visible="no" active="no"/>
+<layer number="114" name="Badge_Outline" color="7" fill="1" visible="no" active="no"/>
+<layer number="115" name="ReferenceISLANDS" color="7" fill="1" visible="no" active="no"/>
 <layer number="116" name="Patch_BOT" color="9" fill="4" visible="no" active="yes"/>
 <layer number="118" name="Rect_Pads" color="7" fill="1" visible="no" active="no"/>
 <layer number="121" name="_tsilk" color="7" fill="1" visible="no" active="yes"/>
@@ -10421,6 +10423,85 @@ Source: http://cache.national.com/ds/LM/LM340.pdf</description>
 </deviceset>
 </devicesets>
 </library>
+<library name="SparkFun-Hardware">
+<description>&lt;h3&gt;SparkFun Electronics' preferred foot prints&lt;/h3&gt;
+This library contains board components that are not electrical in nature, such as stand-offs, magnets, and Actobotics. 
+&lt;br&gt;
+&lt;br&gt;
+We've spent an enormous amount of time creating and checking these footprints and parts, but it is &lt;b&gt; the end user's responsibility&lt;/b&gt; to ensure correctness and suitablity for a given componet or application. 
+&lt;br&gt;
+&lt;br&gt;If you enjoy using this library, please buy one of our products at &lt;a href=" www.sparkfun.com"&gt;SparkFun.com&lt;/a&gt;.
+&lt;br&gt;
+&lt;br&gt;
+&lt;b&gt;Licensing:&lt;/b&gt; Creative Commons ShareAlike 4.0 International - https://creativecommons.org/licenses/by-sa/4.0/ 
+&lt;br&gt;
+&lt;br&gt;
+You are welcome to use this library for commercial purposes. For attribution, we ask that when you begin to sell your device using our footprint, you email us with a link to the product being sold. We want bragging rights that we helped (in a very small part) to create your 8th world wonder. We would like the opportunity to feature your device on our homepage.</description>
+<packages>
+<package name="STANDOFF-ELECTRICAL">
+<description>&lt;h3&gt;Standoff (#4 Screw) - w/ Electrical Connection&lt;/h3&gt;
+&lt;p&gt;This is the mechanical footprint for a #4 phillips button head screw.&lt;/p&gt;
+&lt;p&gt;The drill is surrounded by a copper ring, which can be connected to any net.&lt;/p&gt;
+&lt;h4&gt;Devices Using&lt;/h4&gt;
+&lt;ul&gt;&lt;li&gt;STAND-OFF&lt;/li&gt;&lt;/ul&gt;</description>
+<pad name="P1" x="0" y="0" drill="3.2" diameter="6.35"/>
+<text x="0" y="3.302" size="0.6096" layer="25" font="vector" ratio="20" align="bottom-center">&gt;NAME</text>
+<text x="0" y="-3.302" size="0.6096" layer="27" font="vector" ratio="20" align="top-center">&gt;VALUE</text>
+</package>
+<package name="STANDOFF-ELECTRICAL-NOTHERMALS">
+<description>&lt;h3&gt;Standoff (#4 Screw) - w/ Electrical Connection&lt;/h3&gt;
+&lt;p&gt;This is the mechanical footprint for a #4 phillips button head screw.&lt;/p&gt;
+&lt;p&gt;The drill is surrounded by a copper ring, which can be connected to any net.&lt;/p&gt;
+&lt;h4&gt;Devices Using&lt;/h4&gt;
+&lt;ul&gt;&lt;li&gt;STAND-OFF&lt;/li&gt;&lt;/ul&gt;</description>
+<pad name="P1" x="0" y="0" drill="3.2" diameter="6.35" thermals="no"/>
+<text x="0" y="3.302" size="0.6096" layer="25" font="vector" ratio="20" align="bottom-center">&gt;NAME</text>
+<text x="0" y="-3.302" size="0.6096" layer="27" font="vector" ratio="20" align="top-center">&gt;VALUE</text>
+</package>
+</packages>
+<symbols>
+<symbol name="STANDOFF_ELECTRICAL">
+<description>&lt;h3&gt;Stand-Off with Electrical Connection&lt;/h3&gt;</description>
+<pin name="P$1" x="7.62" y="0" visible="off" length="short" rot="R180"/>
+<circle x="0" y="0" radius="5.08" width="0.254" layer="94"/>
+<text x="0" y="5.334" size="1.27" layer="95" font="vector" align="bottom-center">&gt;NAME</text>
+<text x="0" y="-5.334" size="1.27" layer="96" font="vector" rot="R180" align="bottom-center">&gt;VALUE</text>
+</symbol>
+</symbols>
+<devicesets>
+<deviceset name="STANDOFF_ELECTRICAL" prefix="H">
+<description>&lt;h3&gt;Stand Off&lt;/h3&gt;
+&lt;p&gt;Drill holes with an electrical connection. For example, use these to ground your board to a chassis.&lt;/p&gt;
+&lt;h4&gt;Example SparkFun Products&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://www.sparkfun.com/products/10453"&gt;Screw - Phillips Head (1/4", 4-40, 10 pack)&lt;/a&gt; (PRT-10453)&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.sparkfun.com/products/10452"&gt;Screw - Phillips Head (1/2", 4-40, 10 pack)&lt;/a&gt; (PRT-10452)&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.sparkfun.com/products/10451"&gt;Screw - Phillips Head (3/4", 4-40, 10 pack)&lt;/a&gt; (PRT-10451)&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.sparkfun.com/products/10450"&gt;Screw - Phillips Head (1", 4-40, 10 pack)&lt;/a&gt; (PRT-10450)&lt;/li&gt;</description>
+<gates>
+<gate name="G$1" symbol="STANDOFF_ELECTRICAL" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="STANDOFF-ELECTRICAL">
+<connects>
+<connect gate="G$1" pin="P$1" pad="P1"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="-NOTHERMALS" package="STANDOFF-ELECTRICAL-NOTHERMALS">
+<connects>
+<connect gate="G$1" pin="P$1" pad="P1"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+</devicesets>
+</library>
 </libraries>
 <attributes>
 </attributes>
@@ -10485,6 +10566,11 @@ Source: http://cache.national.com/ds/LM/LM340.pdf</description>
 <part name="GND11" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="+3V4" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="+3V3" device=""/>
 <part name="P+10" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="+5V" device=""/>
+<part name="H1" library="SparkFun-Hardware" deviceset="STANDOFF_ELECTRICAL" device=""/>
+<part name="H2" library="SparkFun-Hardware" deviceset="STANDOFF_ELECTRICAL" device=""/>
+<part name="H3" library="SparkFun-Hardware" deviceset="STANDOFF_ELECTRICAL" device=""/>
+<part name="H4" library="SparkFun-Hardware" deviceset="STANDOFF_ELECTRICAL" device=""/>
+<part name="GND3" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -10693,6 +10779,25 @@ see datasheet page 14</text>
 <instance part="P+10" gate="1" x="53.34" y="71.12" smashed="yes" rot="R270">
 <attribute name="VALUE" x="53.34" y="71.12" size="1.778" layer="96"/>
 </instance>
+<instance part="H1" gate="G$1" x="104.14" y="66.04" smashed="yes">
+<attribute name="NAME" x="104.14" y="71.374" size="1.27" layer="95" font="vector" align="bottom-center"/>
+<attribute name="VALUE" x="104.14" y="60.706" size="1.27" layer="96" font="vector" rot="R180" align="bottom-center"/>
+</instance>
+<instance part="H2" gate="G$1" x="104.14" y="50.8" smashed="yes">
+<attribute name="NAME" x="104.14" y="56.134" size="1.27" layer="95" font="vector" align="bottom-center"/>
+<attribute name="VALUE" x="104.14" y="45.466" size="1.27" layer="96" font="vector" rot="R180" align="bottom-center"/>
+</instance>
+<instance part="H3" gate="G$1" x="129.54" y="66.04" smashed="yes" rot="R180">
+<attribute name="NAME" x="129.54" y="60.706" size="1.27" layer="95" font="vector" rot="R180" align="bottom-center"/>
+<attribute name="VALUE" x="129.54" y="71.374" size="1.27" layer="96" font="vector" align="bottom-center"/>
+</instance>
+<instance part="H4" gate="G$1" x="129.54" y="50.8" smashed="yes" rot="R180">
+<attribute name="NAME" x="129.54" y="45.466" size="1.27" layer="95" font="vector" rot="R180" align="bottom-center"/>
+<attribute name="VALUE" x="129.54" y="56.134" size="1.27" layer="96" font="vector" align="bottom-center"/>
+</instance>
+<instance part="GND3" gate="1" x="116.84" y="48.26" smashed="yes">
+<attribute name="VALUE" x="114.3" y="45.72" size="1.778" layer="96"/>
+</instance>
 </instances>
 <busses>
 </busses>
@@ -10839,6 +10944,20 @@ see datasheet page 14</text>
 <wire x1="53.34" y1="66.04" x2="53.34" y2="63.5" width="0.1524" layer="91"/>
 <pinref part="GND11" gate="1" pin="GND"/>
 <junction x="53.34" y="63.5"/>
+</segment>
+<segment>
+<pinref part="H1" gate="G$1" pin="P$1"/>
+<pinref part="H3" gate="G$1" pin="P$1"/>
+<wire x1="111.76" y1="66.04" x2="116.84" y2="66.04" width="0.1524" layer="91"/>
+<pinref part="H4" gate="G$1" pin="P$1"/>
+<pinref part="H2" gate="G$1" pin="P$1"/>
+<wire x1="116.84" y1="66.04" x2="121.92" y2="66.04" width="0.1524" layer="91"/>
+<wire x1="121.92" y1="50.8" x2="116.84" y2="50.8" width="0.1524" layer="91"/>
+<wire x1="116.84" y1="50.8" x2="111.76" y2="50.8" width="0.1524" layer="91"/>
+<wire x1="116.84" y1="66.04" x2="116.84" y2="50.8" width="0.1524" layer="91"/>
+<junction x="116.84" y="66.04"/>
+<junction x="116.84" y="50.8"/>
+<pinref part="GND3" gate="1" pin="GND"/>
 </segment>
 </net>
 <net name="T_IGN_INPUT" class="0">
