@@ -1247,6 +1247,30 @@ for trimmer refence see : &lt;u&gt;www.electrospec-inc.com/cross_references/trim
 <rectangle x1="-1.0668" y1="-0.6985" x2="-0.4168" y2="0.7015" layer="51"/>
 <rectangle x1="-0.1999" y1="-0.5001" x2="0.1999" y2="0.5001" layer="35"/>
 </package>
+<package name="C025-050X050" urn="urn:adsk.eagle:footprint:23140/1" library_version="10">
+<description>&lt;b&gt;CAPACITOR&lt;/b&gt;&lt;p&gt;
+grid 2.5 mm, outline 5 x 5 mm</description>
+<wire x1="-2.159" y1="2.286" x2="2.159" y2="2.286" width="0.1524" layer="21"/>
+<wire x1="2.159" y1="-2.286" x2="-2.159" y2="-2.286" width="0.1524" layer="21"/>
+<wire x1="2.413" y1="2.032" x2="2.413" y2="-2.032" width="0.1524" layer="21"/>
+<wire x1="-2.413" y1="2.032" x2="-2.413" y2="-2.032" width="0.1524" layer="21"/>
+<wire x1="2.159" y1="2.286" x2="2.413" y2="2.032" width="0.1524" layer="21" curve="-90"/>
+<wire x1="-2.413" y1="2.032" x2="-2.159" y2="2.286" width="0.1524" layer="21" curve="-90"/>
+<wire x1="2.159" y1="-2.286" x2="2.413" y2="-2.032" width="0.1524" layer="21" curve="90"/>
+<wire x1="-2.413" y1="-2.032" x2="-2.159" y2="-2.286" width="0.1524" layer="21" curve="90"/>
+<wire x1="0.762" y1="0" x2="0.381" y2="0" width="0.1524" layer="51"/>
+<wire x1="0.381" y1="0" x2="0.254" y2="0" width="0.1524" layer="21"/>
+<wire x1="0.254" y1="0" x2="0.254" y2="0.762" width="0.254" layer="21"/>
+<wire x1="0.254" y1="0" x2="0.254" y2="-0.762" width="0.254" layer="21"/>
+<wire x1="-0.254" y1="0.762" x2="-0.254" y2="0" width="0.254" layer="21"/>
+<wire x1="-0.254" y1="0" x2="-0.254" y2="-0.762" width="0.254" layer="21"/>
+<wire x1="-0.254" y1="0" x2="-0.381" y2="0" width="0.1524" layer="21"/>
+<wire x1="-0.381" y1="0" x2="-0.762" y2="0" width="0.1524" layer="51"/>
+<pad name="1" x="-1.27" y="0" drill="0.8128" shape="octagon"/>
+<pad name="2" x="1.27" y="0" drill="0.8128" shape="octagon"/>
+<text x="-2.286" y="2.54" size="1.27" layer="25" ratio="10">&gt;NAME</text>
+<text x="-2.286" y="-3.81" size="1.27" layer="27" ratio="10">&gt;VALUE</text>
+</package>
 </packages>
 <packages3d>
 <package3d name="C0805" urn="urn:adsk.eagle:package:23617/2" type="model" library_version="10">
@@ -1259,6 +1283,13 @@ for trimmer refence see : &lt;u&gt;www.electrospec-inc.com/cross_references/trim
 <description>RESISTOR</description>
 <packageinstances>
 <packageinstance name="R0805"/>
+</packageinstances>
+</package3d>
+<package3d name="C025-050X050" urn="urn:adsk.eagle:package:23633/1" type="box" library_version="10">
+<description>CAPACITOR
+grid 2.5 mm, outline 5 x 5 mm</description>
+<packageinstances>
+<packageinstance name="C025-050X050"/>
 </packageinstances>
 </package3d>
 </packages3d>
@@ -2369,6 +2400,11 @@ design rules under a new name.</description>
 <attribute name="NAME" x="2.2098" y="12.4968" size="1.27" layer="25" ratio="10"/>
 <attribute name="VALUE" x="2.286" y="7.493" size="1.27" layer="27"/>
 </element>
+<element name="C10" library="rcl" library_urn="urn:adsk.eagle:library:334" package="C025-050X050" package3d_urn="urn:adsk.eagle:package:23633/1" value="" x="28.702" y="48.26" smashed="yes" rot="R90">
+<attribute name="NAME" x="26.162" y="45.974" size="1.27" layer="25" ratio="10" rot="R90"/>
+<attribute name="SPICEPREFIX" value="C" x="28.702" y="48.26" size="1.778" layer="27" rot="R90" display="off"/>
+<attribute name="VALUE" x="32.512" y="45.974" size="1.27" layer="27" ratio="10" rot="R90"/>
+</element>
 </elements>
 <signals>
 <signal name="IGN_INPUT">
@@ -2487,6 +2523,7 @@ design rules under a new name.</description>
 <wire x1="7.62" y1="30.16" x2="7.62" y2="30.734" width="0.2032" layer="16"/>
 <wire x1="7.62" y1="30.734" x2="8.128" y2="30.734" width="0.2032" layer="16"/>
 <contactref element="JP4" pad="1"/>
+<contactref element="C10" pad="2"/>
 </signal>
 <signal name="T_IGN_INPUT">
 <contactref element="C2" pad="1"/>
@@ -2605,14 +2642,16 @@ design rules under a new name.</description>
 <wire x1="4.826" y1="30.44045" x2="6.54385" y2="28.7226" width="0.6096" layer="16"/>
 <wire x1="24.892" y1="50.038" x2="24.13" y2="50.8" width="0.6096" layer="1"/>
 <wire x1="24.892" y1="50.038" x2="24.892" y2="47.752" width="0.6096" layer="1"/>
-<wire x1="25.908" y1="46.736" x2="24.892" y2="47.752" width="0.6096" layer="1"/>
+<wire x1="24.892" y1="47.752" x2="25.654" y2="46.99" width="0.6096" layer="1"/>
 <wire x1="33.55623125" y1="49.58458125" x2="40.33141875" y2="49.58458125" width="0.6096" layer="1"/>
 <wire x1="40.33141875" y1="49.58458125" x2="40.386" y2="49.53" width="0.6096" layer="1"/>
 <wire x1="40.386" y1="49.53" x2="40.386" y2="47.07" width="0.6096" layer="1"/>
-<wire x1="33.55623125" y1="49.58458125" x2="33.55623125" y2="47.52623125" width="0.6096" layer="1"/>
-<wire x1="33.55623125" y1="47.52623125" x2="32.766" y2="46.736" width="0.6096" layer="1"/>
-<wire x1="32.766" y1="46.736" x2="25.908" y2="46.736" width="0.6096" layer="1"/>
+<wire x1="33.55623125" y1="47.52623125" x2="33.55623125" y2="49.58458125" width="0.6096" layer="1"/>
 <wire x1="31.656234375" y1="49.58458125" x2="33.55623125" y2="49.58458125" width="0.6096" layer="1"/>
+<contactref element="C10" pad="1"/>
+<wire x1="28.702" y1="46.99" x2="25.654" y2="46.99" width="0.6096" layer="1"/>
+<wire x1="33.02" y1="46.99" x2="33.55623125" y2="47.52623125" width="0.6096" layer="1"/>
+<wire x1="28.702" y1="46.99" x2="33.02" y2="46.99" width="0.6096" layer="1"/>
 </signal>
 <signal name="N$7">
 <contactref element="R6" pad="2"/>

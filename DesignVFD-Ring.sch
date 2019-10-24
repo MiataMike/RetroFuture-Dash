@@ -10523,6 +10523,8 @@ Source: http://cache.national.com/ds/LM/LM340.pdf</description>
 <part name="U$4" library="FormE" deviceset="LUMINI3" device=""/>
 <part name="JP3" library="pinhead" library_urn="urn:adsk.eagle:library:325" deviceset="PINHD-1X1" device="" package3d_urn="urn:adsk.eagle:package:22485/2"/>
 <part name="JP4" library="pinhead" library_urn="urn:adsk.eagle:library:325" deviceset="PINHD-1X1" device="" package3d_urn="urn:adsk.eagle:package:22485/2"/>
+<part name="C10" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-US" device="025-050X050" package3d_urn="urn:adsk.eagle:package:23633/1"/>
+<part name="GND12" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -10743,6 +10745,13 @@ see datasheet page 14</text>
 <attribute name="NAME" x="-3.81" y="330.835" size="1.778" layer="95" rot="MR0"/>
 <attribute name="VALUE" x="-3.81" y="322.58" size="1.778" layer="96" rot="MR0"/>
 </instance>
+<instance part="C10" gate="G$1" x="-12.7" y="200.66" smashed="yes">
+<attribute name="NAME" x="-11.684" y="201.295" size="1.778" layer="95"/>
+<attribute name="VALUE" x="-11.684" y="196.469" size="1.778" layer="96"/>
+</instance>
+<instance part="GND12" gate="1" x="-12.7" y="193.04" smashed="yes">
+<attribute name="VALUE" x="-15.24" y="190.5" size="1.778" layer="96"/>
+</instance>
 </instances>
 <busses>
 </busses>
@@ -10897,6 +10906,10 @@ see datasheet page 14</text>
 <pinref part="GND3" gate="1" pin="GND"/>
 <pinref part="U$4" gate="G$1" pin="P$1"/>
 <wire x1="119.38" y1="50.8" x2="116.84" y2="50.8" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="C10" gate="G$1" pin="2"/>
+<pinref part="GND12" gate="1" pin="GND"/>
 </segment>
 </net>
 <net name="T_IGN_INPUT" class="0">
@@ -11057,6 +11070,9 @@ see datasheet page 14</text>
 <junction x="33.02" y="203.2"/>
 <pinref part="IC1" gate="G$1" pin="!SHDN"/>
 <wire x1="5.08" y1="203.2" x2="5.08" y2="185.42" width="0.1524" layer="91"/>
+<pinref part="C10" gate="G$1" pin="1"/>
+<wire x1="-12.7" y1="203.2" x2="5.08" y2="203.2" width="0.1524" layer="91"/>
+<junction x="5.08" y="203.2"/>
 </segment>
 </net>
 <net name="N$7" class="0">
