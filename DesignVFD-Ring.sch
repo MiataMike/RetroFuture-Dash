@@ -10489,7 +10489,7 @@ Source: http://cache.national.com/ds/LM/LM340.pdf</description>
 <sheets>
 <sheet>
 <plain>
-<text x="60.96" y="101.6" size="1.778" layer="91">Ribbon Cable for Ring</text>
+<text x="7.62" y="129.54" size="1.778" layer="91">Ribbon Cable for Ring</text>
 <text x="-73.66" y="246.38" size="6.4516" layer="91">TODO sort Caps</text>
 <text x="73.66" y="332.74" size="6.4516" layer="91">Batt to 12V</text>
 <text x="76.2" y="287.02" size="6.4516" layer="91">5V to 2.5V</text>
@@ -10504,9 +10504,9 @@ see datasheet page 10</text>
 see datasheet page 14</text>
 </plain>
 <instances>
-<instance part="JP1" gate="A" x="76.2" y="93.98" smashed="yes" rot="R90">
-<attribute name="NAME" x="65.405" y="87.63" size="1.778" layer="95"/>
-<attribute name="VALUE" x="86.36" y="87.63" size="1.778" layer="96" rot="R90"/>
+<instance part="JP1" gate="A" x="22.86" y="121.92" smashed="yes" rot="R90">
+<attribute name="NAME" x="12.065" y="115.57" size="1.778" layer="95"/>
+<attribute name="VALUE" x="33.02" y="115.57" size="1.778" layer="96" rot="R90"/>
 </instance>
 <instance part="IC1" gate="G$1" x="17.78" y="182.88" smashed="yes">
 <attribute name="NAME" x="10.14143125" y="198.1571" size="1.78233125" layer="95"/>
@@ -10809,23 +10809,23 @@ see datasheet page 14</text>
 </segment>
 <segment>
 <pinref part="JP1" gate="A" pin="1"/>
-<wire x1="68.58" y1="91.44" x2="68.58" y2="76.2" width="0.1524" layer="91"/>
-<label x="68.58" y="76.2" size="1.778" layer="95" rot="R90"/>
+<wire x1="15.24" y1="119.38" x2="15.24" y2="104.14" width="0.1524" layer="91"/>
+<label x="15.24" y="104.14" size="1.778" layer="95" rot="R90"/>
 </segment>
 <segment>
 <pinref part="JP1" gate="A" pin="3"/>
-<wire x1="73.66" y1="91.44" x2="73.66" y2="76.2" width="0.1524" layer="91"/>
-<label x="73.66" y="76.2" size="1.778" layer="95" rot="R90"/>
+<wire x1="20.32" y1="119.38" x2="20.32" y2="104.14" width="0.1524" layer="91"/>
+<label x="20.32" y="104.14" size="1.778" layer="95" rot="R90"/>
 </segment>
 <segment>
 <pinref part="JP1" gate="A" pin="5"/>
-<wire x1="78.74" y1="91.44" x2="78.74" y2="76.2" width="0.1524" layer="91"/>
-<label x="78.74" y="76.2" size="1.778" layer="95" rot="R90"/>
+<wire x1="25.4" y1="119.38" x2="25.4" y2="104.14" width="0.1524" layer="91"/>
+<label x="25.4" y="104.14" size="1.778" layer="95" rot="R90"/>
 </segment>
 <segment>
 <pinref part="JP1" gate="A" pin="7"/>
-<wire x1="83.82" y1="91.44" x2="83.82" y2="76.2" width="0.1524" layer="91"/>
-<label x="83.82" y="76.2" size="1.778" layer="95" rot="R90"/>
+<wire x1="30.48" y1="119.38" x2="30.48" y2="104.14" width="0.1524" layer="91"/>
+<label x="30.48" y="104.14" size="1.778" layer="95" rot="R90"/>
 </segment>
 <segment>
 <pinref part="C9" gate="G$1" pin="2"/>
@@ -10907,8 +10907,8 @@ see datasheet page 14</text>
 </segment>
 <segment>
 <pinref part="JP1" gate="A" pin="2"/>
-<wire x1="71.12" y1="91.44" x2="71.12" y2="76.2" width="0.1524" layer="91"/>
-<label x="71.12" y="76.2" size="1.778" layer="95" rot="R90"/>
+<wire x1="17.78" y1="119.38" x2="17.78" y2="104.14" width="0.1524" layer="91"/>
+<label x="17.78" y="104.14" size="1.778" layer="95" rot="R90"/>
 </segment>
 <segment>
 <pinref part="U$3" gate="G$1" pin="VIN"/>
@@ -11152,8 +11152,8 @@ see datasheet page 14</text>
 <net name="T_MOSI" class="0">
 <segment>
 <pinref part="JP1" gate="A" pin="4"/>
-<wire x1="76.2" y1="91.44" x2="76.2" y2="76.2" width="0.1524" layer="91"/>
-<label x="76.2" y="76.2" size="1.778" layer="95" rot="R90"/>
+<wire x1="22.86" y1="119.38" x2="22.86" y2="104.14" width="0.1524" layer="91"/>
+<label x="22.86" y="104.14" size="1.778" layer="95" rot="R90"/>
 </segment>
 <segment>
 <pinref part="U$3" gate="G$1" pin="11/MOSI"/>
@@ -11164,8 +11164,8 @@ see datasheet page 14</text>
 <net name="T_SCK" class="0">
 <segment>
 <pinref part="JP1" gate="A" pin="6"/>
-<wire x1="81.28" y1="91.44" x2="81.28" y2="76.2" width="0.1524" layer="91"/>
-<label x="81.28" y="76.2" size="1.778" layer="95" rot="R90"/>
+<wire x1="27.94" y1="119.38" x2="27.94" y2="104.14" width="0.1524" layer="91"/>
+<label x="27.94" y="104.14" size="1.778" layer="95" rot="R90"/>
 </segment>
 <segment>
 <pinref part="U$3" gate="G$1" pin="13/SCK/LED"/>
