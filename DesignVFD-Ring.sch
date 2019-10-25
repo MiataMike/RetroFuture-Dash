@@ -1625,7 +1625,7 @@ general purpose rectifier, 1 A</description>
 <package name="732-1416-ND">
 <pad name="P$1" x="0" y="0" drill="0.9"/>
 <pad name="P$2" x="5" y="0" drill="0.9"/>
-<rectangle x1="-0.25" y1="-5.5" x2="5.25" y2="5.75" layer="21"/>
+<rectangle x1="-0.25" y1="-5.5" x2="5.25" y2="5.75" layer="48"/>
 </package>
 <package name="IVL2-7/5">
 <pad name="P$1" x="0" y="0" drill="0.9"/>
@@ -1660,8 +1660,8 @@ general purpose rectifier, 1 A</description>
 <pad name="P$30" x="32.5" y="27.5" drill="0.9"/>
 <pad name="P$31" x="35" y="27.5" drill="0.9"/>
 <pad name="P$32" x="37.5" y="27.5" drill="0.9"/>
-<rectangle x1="-10.25" y1="0" x2="48.75" y2="27.5" layer="21"/>
-<polygon width="0.127" layer="21">
+<rectangle x1="-10.25" y1="0" x2="48.75" y2="27.5" layer="48"/>
+<polygon width="0.127" layer="48">
 <vertex x="-10" y="7.5"/>
 <vertex x="-20" y="13.5"/>
 <vertex x="-10" y="20"/>
@@ -10469,7 +10469,7 @@ Source: http://cache.national.com/ds/LM/LM340.pdf</description>
 <part name="IC1" library="LMR64010XMF_NOPB" deviceset="LMR64010XMF/NOPB" device=""/>
 <part name="U1" library="MAX6920AWP_" deviceset="MAX6920AWP+" device=""/>
 <part name="D1" library="diode" library_urn="urn:adsk.eagle:library:210" deviceset="MBR0520LT" device="" package3d_urn="urn:adsk.eagle:package:43420/1"/>
-<part name="U$1" library="FormE" deviceset="732-1416-ND" device="732-1416-ND" value="10uF"/>
+<part name="U$1" library="FormE" deviceset="732-1416-ND" device="732-1416-ND" value="10uH"/>
 <part name="U2" library="LM1084IS-5.0" deviceset="LM1084IS-5.0" device=""/>
 <part name="U3" library="TPS76325DBVT" deviceset="TPS76325DBVT" device=""/>
 <part name="JP2" library="pinhead" library_urn="urn:adsk.eagle:library:325" deviceset="PINHD-1X1" device="" package3d_urn="urn:adsk.eagle:package:22485/2"/>
@@ -11365,12 +11365,23 @@ see datasheet page 14</text>
 <approved hash="104,1,45.72,66.04,U$3,AGND,GND,,,"/>
 <approved hash="104,1,45.72,68.58,U$3,3.3V,+3V3,,,"/>
 <approved hash="104,1,45.72,71.12,U$3,VIN,+5V,,,"/>
+<approved hash="208,1,48.26,238.76,+5V,out,,,,"/>
+<approved hash="208,1,60.96,238.76,+5V,sup,,,,"/>
+<approved hash="208,1,0,299.72,+5V,sup,,,,"/>
+<approved hash="208,1,50.8,71.12,+5V,sup,,,,"/>
 <approved hash="106,1,276.86,91.44,BDOT,,,,,"/>
 <approved hash="106,1,322.58,86.36,G3,,,,,"/>
 <approved hash="106,1,233.68,73.66,NC,,,,,"/>
 <approved hash="106,1,276.86,93.98,TDOT,,,,,"/>
+<approved hash="208,1,40.64,289.56,V+,out,,,,"/>
+<approved hash="208,1,53.34,289.56,V+,sup,,,,"/>
+<approved hash="208,1,332.74,76.2,V+,sup,,,,"/>
 <approved hash="113,1,22.3478,119.617,JP1,,,,,"/>
+<approved hash="113,1,228.363,291.056,JP2,,,,,"/>
 <approved hash="113,1,264.16,288.267,D3,,,,,"/>
+<approved hash="113,1,-7.85707,336.776,JP3,,,,,"/>
+<approved hash="113,1,-7.85707,329.156,JP4,,,,,"/>
+<approved hash="113,1,-10.8906,199.39,C10,,,,,"/>
 </errors>
 </schematic>
 </drawing>
