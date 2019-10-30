@@ -26,7 +26,7 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.5361069"
-     inkscape:cx="595.24842"
+     inkscape:cx="292.13723"
      inkscape:cy="580.15374"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
@@ -44,7 +44,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -73,17 +73,17 @@
        xml:space="preserve"
        id="flowRoot4615"
        style="font-style:normal;font-weight:normal;font-size:85.33333588px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
-       transform="matrix(0.26458333,0,0,0.26458333,-64.037174,-30.535437)"><flowRegion
+       transform="matrix(0.26458333,0,0,0.26458333,-59.101902,-35.470709)"><flowRegion
          id="flowRegion4617"
          style="font-size:85.33333588px"><rect
            id="rect4619"
-           width="331.06046"
-           height="209.05615"
+           width="401.94186"
+           height="212.78676"
            x="551.32782"
            y="586.35999"
            style="font-size:85.33333588px" /></flowRegion><flowPara
          id="flowPara4621"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:85.33333588px;font-family:'Bauhaus 93';-inkscape-font-specification:'Bauhaus 93, '">ptodyne</flowPara></flowRoot>    <flowRoot
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:85.33333588px;font-family:'Bauhaus 93';-inkscape-font-specification:'Bauhaus 93, '">Optodyne</flowPara></flowRoot>    <flowRoot
        xml:space="preserve"
        id="flowRoot4623"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:40px;line-height:1.25;font-family:Mistral;-inkscape-font-specification:Mistral;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
