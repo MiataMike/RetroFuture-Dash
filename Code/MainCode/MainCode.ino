@@ -29,14 +29,19 @@ float angleRangePerLED = 256.0 / (NUM_LEDS); //A single LED will take up a space
 #define mosi2 5
 #define blank 9
 
-int rpm = 0;
+int rpm = 8000;
 bool NRup = true;
 
 // Create an IntervalTimer object 
 IntervalTimer myTimer;
-
+bool displayFlag = false;
+bool blinkFlag = false;
+bool blinkEven = false;
+unsigned long blinkCount = 0;
+#define blinkDelay 75
 int vfdCount = 0;
 
+// masks for vfd grid
 #define threeMask 0b0000000000100000
 #define twoMask 0b0000000000000100
 #define oneMask 0b0000100000000000
@@ -45,13 +50,13 @@ int vfdCount = 0;
 void setup()
 {
   //Configure pin outputs
-  pinMode(heaterPin, OUTPUT);
   pinMode(sck2, OUTPUT);
   pinMode(cs2, OUTPUT);
   pinMode(mosi2, OUTPUT);
   pinMode(blank, OUTPUT);
+  pinMode(heaterPin, OUTPUT);
   digitalWrite(blank, LOW); // enable VFD
-  analogWriteFrequency(heaterPin, 600);
+  //analogWriteFrequency(heaterPin, 600);
   //analogWriteResolution(8);
   analogWrite(heaterPin, 150);// turn on heater
 
@@ -65,7 +70,14 @@ void setup()
 
 void loop() {
   // put your main code here, to run repeatedly:
-
+if(displayFlag)
+{
+    //Display LED
+  displayLED(rpm);
+  //Display VFD
+  displayVFD(vfdCount, rpm);
+  displayFlag = false;
+} 
 if(NRup)
 {
   rpm++;
@@ -78,19 +90,19 @@ if(rpm > 9998)
 {
   NRup = false;
 }
-if(rpm <1)
+if(rpm <8000)
 {
   NRup = true;
 }
-delayMicroseconds(100);
+delayMicroseconds(1000);
 
 }
 
 void populateMap () //we map LED's to a 360 degree circle where 360 == 255
 {
-  for (int ledNum = 0; ledNum < NUM_LEDS; ledNum++) //Loops through each LED and assigns it to it's range of angles
+  for (int ledNum = 0; ledNum < NUM_LEDS - 10; ledNum++) //Loops through each LED and assigns it to it's range of angles
   {
-    for (int j = round(ledNum * angleRangePerLED); j < round((ledNum + 1) * angleRangePerLED); j++)
+    for (int j = round(ledNum * angleRangePerLED * 6/5); j < round((ledNum + 1) * angleRangePerLED*6/5); j++)
     {
 
       if (ledNum <= 25)
@@ -110,10 +122,8 @@ void populateMap () //we map LED's to a 360 degree circle where 360 == 255
 
 void frameISR()
 {
-  //Display LED
-  displayLED(rpm);
-  //Display VFD
-  displayVFD(vfdCount, rpm);
+  //set display flag
+  displayFlag = true;
 }
 
 
@@ -180,6 +190,26 @@ void displayVFD(int count, int rpm)
 }
 
 void displayLED(int rotation){
+  if(rpm > 9000 && blinkFlag == false && (millis() - blinkCount > blinkDelay)) //when to turn on
+  {
+    blinkCount = millis();
+    blinkFlag = true;
+    brandonValley();
+    return;
+  }
+  else if(rpm > 9000 && blinkFlag == true)
+  {
+    if ((millis() - blinkCount) < blinkDelay)
+    {
+      return;
+    }
+    else //reset
+    {
+      blinkFlag = false;
+      blinkCount = millis();
+      blinkEven = !blinkEven;
+    }
+  }
   rotation = rotation * 255 / 9999 ;
   ring[25] = CHSV(25,255,255);
   ring[20] = CHSV(25,255,255);
@@ -207,4 +237,22 @@ void vfdDigit(int letter)
   shiftOut(mosi2, sck2, MSBFIRST, msByte);
   shiftOut(mosi2, sck2, MSBFIRST, lsByte);
   digitalWrite(cs2, HIGH);
+}
+
+void brandonValley()
+{
+  if(blinkEven)
+  {
+    for(int i = 0; i < NUM_LEDS; i+=2)
+    {
+      ring[i] = CHSV(5,255,255);
+    }
+  }
+  else
+  {
+    for(int i = 1; i < NUM_LEDS; i+=2)
+    {
+      ring[i] = CHSV(5,255,255);
+    }
+  }
 }
