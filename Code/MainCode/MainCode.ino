@@ -78,7 +78,7 @@ void setup()
 void loop() {
   // put your main code here, to run repeatedly:
 
-rpm = 1000000 / tau;
+rpm = 1000000 / tau * 60 / 2; //convert microseconds to rps to rpm (2 ignition events per revolution) 
 if(displayFlag)
 {
     //Display LED
