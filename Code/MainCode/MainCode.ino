@@ -28,10 +28,11 @@ float angleRangePerLED = 256.0 / (NUM_LEDS); //A single LED will take up a space
 #define cs2 3
 #define mosi2 5
 #define blank 9
+#define ign_input 7
 
 int rpm = 8000;
 bool NRup = true;
-
+unsigned long tau = 0;
 // Create an IntervalTimer object 
 IntervalTimer myTimer;
 bool displayFlag = false;
@@ -47,6 +48,7 @@ int vfdCount = 0;
 #define oneMask 0b0000100000000000
 #define zeroMask 0b0000000010000000
 
+
 void setup()
 {
   //Configure pin outputs
@@ -55,6 +57,7 @@ void setup()
   pinMode(mosi2, OUTPUT);
   pinMode(blank, OUTPUT);
   pinMode(heaterPin, OUTPUT);
+  pinMode(7, INPUT_PULLUP);
   digitalWrite(blank, LOW); // enable VFD
   //analogWriteFrequency(heaterPin, 600);
   //analogWriteResolution(8);
@@ -66,10 +69,16 @@ void setup()
   populateMap();
 
   myTimer.begin(frameISR, 1500);
+
+
+  //RPM counter interrupt
+  attachInterrupt(digitalPinToInterrupt(ign_input), rpm_ISR, FALLING);
 }
 
 void loop() {
   // put your main code here, to run repeatedly:
+
+rpm = 1000000 / tau;
 if(displayFlag)
 {
     //Display LED
@@ -78,22 +87,6 @@ if(displayFlag)
   displayVFD(vfdCount, rpm);
   displayFlag = false;
 } 
-if(NRup)
-{
-  rpm++;
-}
-else
-{
-  rpm--;
-}
-if(rpm > 9998)
-{
-  NRup = false;
-}
-if(rpm <8000)
-{
-  NRup = true;
-}
 delayMicroseconds(1000);
 
 }
@@ -255,4 +248,13 @@ void brandonValley()
       ring[i] = CHSV(5,255,255);
     }
   }
+}
+void rpm_ISR()
+{
+  static unsigned long lastMicros = 0;
+  unsigned long nowMicros = 0;
+  nowMicros = micros();
+  tau = nowMicros - lastMicros;
+  lastMicros = nowMicros;
+  return;
 }
